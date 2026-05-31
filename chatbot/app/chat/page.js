@@ -285,6 +285,7 @@ export default function ChatPage() {
     setMessages(newMsgs)
     setInput('')
     setLoading(true)
+    inputRef.current?.focus()
 
     let convId = activeConvId
 
@@ -546,7 +547,7 @@ export default function ChatPage() {
               placeholder="Ask Re-Emi anything..."
               rows={1}
               style={c.textarea}
-              disabled={loading || msgsLoading}
+              disabled={msgsLoading}
             />
             <button
               onClick={() => sendMessage()}
